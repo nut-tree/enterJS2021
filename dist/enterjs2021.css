@@ -1,0 +1,41 @@
+.logoContainer {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.logo {
+  width: 100px;
+}
+
+.listItem {
+  margin-top: 0.5rem;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marginLeft {
+  margin-left: 0.5rem;
+}
+.titleSpan {
+  font-size: 2rem;
+  color: white;
+}
+
+.flexColumnEnd {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.flexCenterSpaceAround {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

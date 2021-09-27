@@ -1,0 +1,355 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Desktop-Automatisierung - Gibt's da was von JavaScript?</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/moon.css">
+	<link rel="stylesheet" href="dist/enterjs2021.css">
+	<link rel="stylesheet" href="plugin/title-footer/title-footer.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="logoContainer">
+		<a href="https://s1h.org" target="_blank" rel="noopener noreferrer">
+			<img class="logo" src="dist/img/logo.png" />
+		</a>
+	</div>
+	<div class="reveal">
+		<!-- TITLE SLIDE -->
+		<div class="slides">
+			<section>
+				<h1 class="r-fit-text">Desktop-Automatisierung</h1>
+				<h2 class="r-fit-text">Gibt's da was von JavaScript?</h2>
+
+				<ul style="list-style: none;">
+					<li class="listItem">
+						<span>Simon Hofmann</span>
+					</li>
+					<li class="listItem">
+						<a href="https://twitter.com/s1hofmann" target="_blank"
+							rel="noopener noreferrer">
+							<div class="flexCenter">
+								<svg viewBox="0 0 24 24" width="32px" height="32px"
+									fill="#1DA1F2" aria-hidden="true"
+									class="r-1cvl2hr r-4qtqp9 r-yyyyoo r-16y2uox r-8kz0gk r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-lrsllp">
+									<g>
+										<path
+											d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z">
+										</path>
+									</g>
+								</svg>
+								<span class="titleSpan marginLeft">@s1hofmann</span>
+							</div>
+						</a>
+					</li>
+					<li class="listItem">
+						<a href="https://github.com/s1hofmann" target="_blank"
+							rel="noopener noreferrer">
+							<div class="flexCenter">
+								<svg height="32px" aria-hidden="true"
+									viewBox="0 0 16 16" version="1.1" width="32px"
+									data-view-component="true"
+									style="background-color: white; border-radius: 50%; margin-left: -1px; margin-top: -1px;">
+									<path fill-rule="evenodd"
+										d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+									</path>
+								</svg>
+								<span class="titleSpan marginLeft">s1hofmann</span>
+							</div>
+						</a>
+					</li>
+					<li class="listItem">
+						<a href="https://s1h.org" target="_blank" rel="noopener noreferrer">
+							<div class="flexCenter">
+								<svg width="32px" height="32px" viewBox="0 0 41 41"
+									style="fill-rule:evenodd;clip-rule:evenodd;">
+									<g transform="matrix(1,0,0,1,3.37907,3.3382)">
+										<g
+											transform="matrix(0.0817461,0,0,0.0817461,-0.223639,-0.182773)">
+											<path d="M209,15C102.405,15.547 15,103.401 15,209.997C15,316.971 103.026,404.997 210,404.997C316.974,404.997 405,316.971 405,209.997C405,103.401 317.595,15.547 211,15L209,15Z"
+												style="fill:none;fill-rule:nonzero;stroke:rgb(255, 255, 255);stroke-width:26px;" />
+										</g>
+										<g
+											transform="matrix(0.0817461,0,0,0.0817461,-0.223639,-0.182773)">
+											<path d="M210,15L210,405M405,210L15,210M59,90C149.124,154.296 270.876,154.296 361,90M361,330C270.876,265.704 149.124,265.704 59,330M195,20C138.786,67.474 106.304,137.422 106.304,211C106.304,284.578 138.786,354.526 195,402M225,402C281.214,354.526 313.696,284.578 313.696,211C313.696,137.422 281.214,67.474 225,20"
+												style="fill:none;fill-rule:nonzero;stroke:rgb(255, 255, 255);stroke-width:18px;" />
+										</g>
+									</g>
+								</svg>
+								<span class="titleSpan marginLeft">s1h.org</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</section>
+
+			<!-- INTRO SLIDE -->
+			<section>
+				<div class="flexCenterSpaceAround">
+					<img style="width: 300px; border-radius: 50%;" src="dist/img/me.png" />
+					<div class="flexColumnEnd">
+						<h3>Simon Hofmann</h3>
+						<div class="flexCenter">
+							<svg width="32px" height="32px" viewBox="0 0 640 512">
+								<path fill="rgb(255, 255, 255)"
+									d="M630.6 364.9l-90.3-90.2c-12-12-28.3-18.7-45.3-18.7h-79.3c-17.7 0-32 14.3-32 32v79.2c0 17 6.7 33.2 18.7 45.2l90.3 90.2c12.5 12.5 32.8 12.5 45.3 0l92.5-92.5c12.6-12.5 12.6-32.7.1-45.2zm-182.8-21c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24c0 13.2-10.7 24-24 24zm-223.8-88c70.7 0 128-57.3 128-128C352 57.3 294.7 0 224 0S96 57.3 96 128c0 70.6 57.3 127.9 128 127.9zm127.8 111.2V294c-12.2-3.6-24.9-6.2-38.2-6.2h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 287.9 0 348.1 0 422.3v41.6c0 26.5 21.5 48 48 48h352c15.5 0 29.1-7.5 37.9-18.9l-58-58c-18.1-18.1-28.1-42.2-28.1-67.9z">
+								</path>
+							</svg>
+							<h5 style="margin-left: 0.75rem;">Fullstack Software Engineer
+							</h5>
+						</div>
+						<div class="flexCenter">
+							<svg width="32px" height="32px" viewBox="0 0 448 512"
+								style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+								<path d="M128,148l0,-40c0,-6.6 5.4,-12 12,-12l40,0c6.6,0 12,5.4 12,12l0,40c0,6.6 -5.4,12 -12,12l-40,0c-6.6,0 -12,-5.4 -12,-12Zm140,12l40,0c6.6,0 12,-5.4 12,-12l0,-40c0,-6.6 -5.4,-12 -12,-12l-40,0c-6.6,0 -12,5.4 -12,12l0,40c0,6.6 5.4,12 12,12Zm-128,96l40,0c6.6,0 12,-5.4 12,-12l0,-40c0,-6.6 -5.4,-12 -12,-12l-40,0c-6.6,0 -12,5.4 -12,12l0,40c0,6.6 5.4,12 12,12Zm128,0l40,0c6.6,0 12,-5.4 12,-12l0,-40c0,-6.6 -5.4,-12 -12,-12l-40,0c-6.6,0 -12,5.4 -12,12l0,40c0,6.6 5.4,12 12,12Zm-76,84l0,-40c0,-6.6 -5.4,-12 -12,-12l-40,0c-6.6,0 -12,5.4 -12,12l0,40c0,6.6 5.4,12 12,12l40,0c6.6,0 12,-5.4 12,-12Zm76,12l40,0c6.6,0 12,-5.4 12,-12l0,-40c0,-6.6 -5.4,-12 -12,-12l-40,0c-6.6,0 -12,5.4 -12,12l0,40c0,6.6 5.4,12 12,12Zm180,124l0,36l-448,0l0,-36c0,-6.6 5.4,-12 12,-12l19.5,0l0,-440c0,-13.3 10.7,-24 24,-24l337,0c13.3,0 24,10.7 24,24l0,440l19.5,0c6.6,0 12,5.4 12,12Zm-368.5,-13l112.5,0l0,-67c0,-6.6 5.4,-12 12,-12l40,0c6.6,0 12,5.4 12,12l0,67l112.5,0l0,-414l-288.5,-1l-0.5,415Z"
+									style="fill-rule:evenodd;fill: rgb(255, 255, 255);" />
+							</svg>
+							<a href="https://instana.com" target="_blank" ,
+								rel="noopener noreferrer">
+								<h5 style="margin-left: 0.75rem;">Instana</h5>
+							</a>
+						</div>
+						<div class="flexCenter">
+							<svg width="32px" height="32px" viewBox="0 0 640 512">
+								<path fill="rgb(255, 255, 255)"
+									d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z">
+								</path>
+							</svg>
+							<a href="https://github.com/nut-tree/nut.js" target="_blank"
+								rel="noopener noreferrer">
+								<h5 style="margin-left: 0.75rem;">nut-tree/nut.js</h5>
+							</a>
+						</div>
+						<div class="flexCenter">
+							<blockquote>
+								<p>"Ich find schon raus wie das funktioniert!"</p>
+							</blockquote>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h3>Gibt's denn nun was von JavaScript zur Desktop-Automatisierung?</h3>
+			</section>
+
+			<section>
+				<h3>Mindestanforderungen</h3>
+				<ul>
+					<li class="fragment">Aktiv maintained</li>
+					<li class="fragment">Unterstützt aktuelle node/Electron Versionen (mindestens
+						LTS)</li>
+					<li class="fragment">Cross-platform</li>
+					<li class="fragment">Einfaches Setup</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Ergebnis</h3>
+				<div style="display: flex; justify-content: space-around;">
+					<img class="fragment" src="dist/img/dislike/build_error.png" />
+					<img class="fragment" src="dist/img/dislike/flatline.png" />
+					<img class="fragment" src="dist/img/dislike/outdated.png" />
+				</div>
+				<div class="r-stack">
+					<div style="display: flex; justify-content: center;">
+						<h3 class="fragment">Treffer: 0</h3>
+					</div>
+					<img class="fragment" src="dist/img/initial_commit.png" />
+				</div>
+			</section>
+
+			<section>
+				<h3>nut.js</h3>
+				<img style="width: 300px; border-radius: 50%;" src="dist/img/nut.png" />
+				<h3>Native UI Toolkit</h3>
+			</section>
+
+			<section>
+				<div class="flexCenterSpaceAround">
+					<img style="width: 300px; border-radius: 50%;" src="dist/img/nut.png" />
+					<div style="display: flex; flex-direction: column; align-items: center;">
+						<h3>nut.js Ziele</h3>
+						<ul>
+							<li class="fragment">Unterstützung von node LTS Versionen sowie
+								aktuelleste Electron Version</li>
+							<li class="fragment">Cross-platform</li>
+							<li class="fragment">Image matching</li>
+							<li class="fragment">Schnelle, einfache Installation</li>
+							<li class="fragment">Verlässliche Tests</li>
+							<li class="fragment">Automatisieren, was möglich ist</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h3>Unterstützung von node LTS Versionen sowie aktuelleste Electron Version</h3>
+				<ul>
+					<li class="fragment">nut.js nutzt lowlevel OS APIs mittels node addons</li>
+					<li class="fragment">Abhängig von der verwendeten Technologie sind node addons
+						an eine spezifische node Version gebunden</li>
+					<li class="fragment">Benötigt regelmäßige Releases mit neuen Binaries</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Cross-platform</h3>
+				<ul>
+					<li class="fragment">node addons sind plattformabhängige Binaries</li>
+					<li class="fragment">Benötigt Releases für jede unterstützte Plattform</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Image matching</h3>
+				<ul>
+					<li class="fragment">nut.js nutzt OpenCV mittels node addon für bildbasierte
+						Aktionen</li>
+					<li class="fragment">Abhängig von Plattform und node Version</li>
+					<li class="fragment">Benötigt OpenCV Bibliothek für jede Plattform</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Schnelle, einfache Installation</h3>
+				<ul>
+					<li class="fragment">npm install</li>
+					<li class="fragment">Keine Abhängigkeiten zu zusätzlichen Buildsystemen</li>
+					<li class="fragment">Keine Abhängigkeiten zu Python</li>
+					<li class="fragment">Kein manuelles bauen von Abhängigkeiten</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Verlässliche Tests</h3>
+				<ul>
+					<li class="fragment">Tests werden auf jeder unterstützen Plattform ausgeführt
+					</li>
+					<li class="fragment">Tests werden gegen mehrere node Versionen ausgeführt</li>
+					<li class="fragment">Electron/Spectron basierte end-to-end Tests</li>
+					<li class="fragment">Docker basierte end-to-end Tests</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Automatisieren, was möglich ist</h3>
+				<ul>
+					<li class="fragment">Automatisierte Tests</li>
+					<li class="fragment">Automatisierte Releases</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Ergebnis</h3>
+				<ul style="list-style: none; margin: 0">
+					<li class="listItem">
+						<a href="https://github.com/nut-tree/nut.js" target="_blank"
+							rel="noopener noreferrer">
+							<div class="flexCenter">
+								<svg height="32px" aria-hidden="true"
+									viewBox="0 0 16 16" version="1.1" width="32px"
+									data-view-component="true"
+									style="background-color: white; border-radius: 50%; margin-left: -1px; margin-top: -1px;">
+									<path fill-rule="evenodd"
+										d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+									</path>
+								</svg>
+								<span class="titleSpan marginLeft">nut-tree/nut.js</span>
+							</div>
+						</a>
+					</li>
+					<li class="listItem">
+						<a href="https://nutjs.dev" target="_blank" rel="noopener noreferrer">
+							<div class="flexCenter">
+								<svg width="32px" height="32px" viewBox="0 0 41 41"
+									style="fill-rule:evenodd;clip-rule:evenodd;">
+									<g transform="matrix(1,0,0,1,3.37907,3.3382)">
+										<g
+											transform="matrix(0.0817461,0,0,0.0817461,-0.223639,-0.182773)">
+											<path d="M209,15C102.405,15.547 15,103.401 15,209.997C15,316.971 103.026,404.997 210,404.997C316.974,404.997 405,316.971 405,209.997C405,103.401 317.595,15.547 211,15L209,15Z"
+												style="fill:none;fill-rule:nonzero;stroke:rgb(255, 255, 255);stroke-width:26px;" />
+										</g>
+										<g
+											transform="matrix(0.0817461,0,0,0.0817461,-0.223639,-0.182773)">
+											<path d="M210,15L210,405M405,210L15,210M59,90C149.124,154.296 270.876,154.296 361,90M361,330C270.876,265.704 149.124,265.704 59,330M195,20C138.786,67.474 106.304,137.422 106.304,211C106.304,284.578 138.786,354.526 195,402M225,402C281.214,354.526 313.696,284.578 313.696,211C313.696,137.422 281.214,67.474 225,20"
+												style="fill:none;fill-rule:nonzero;stroke:rgb(255, 255, 255);stroke-width:18px;" />
+										</g>
+									</g>
+								</svg>
+								<span class="titleSpan marginLeft">nutjs.dev</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Demo</h3>
+			</section>
+
+			<section>
+				<h3>Pläne</h3>
+				<ul>
+					<li class="fragment">Plugin System</li>
+					<li class="fragment">Bildbasierte Suche ausgegliedert als Plugin</li>
+					<li class="fragment">Verbesserte bildbasierte Suche</li>
+					<li class="fragment">Support mehrerer Displays</li>
+					<li class="fragment">OCR und reverse OCR</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Demo #2</h3>
+			</section>
+
+			<section>
+				<h3>Vielen Dank</h3>
+				<ul>
+					<li class="fragment">Fragen?</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			controls: true,
+			// Help the user learn the controls by providing hints, for example by
+			// bouncing the down arrow when they first encounter a vertical slide
+			controlsTutorial: true,
+			// Determines where controls appear, "edges" or "bottom-right"
+			controlsLayout: 'bottom-right',
+			// Visibility rule for backwards navigation arrows; "faded", "hidden"
+			// or "visible"
+			controlsBackArrows: 'faded',
+			slideNumber: true,
+			history: true,
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+			dependencies:
+				[
+					{ src: 'plugin/title-footer/title-footer.js', async: true, callback: function () { title_footer.initialize(); } }
+				]
+		});
+	</script>
+</body>
+
+</html>
