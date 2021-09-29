@@ -18,6 +18,7 @@
   "homepage": "https://github.com/nut-tree/enterJS2021#readme",
   "dependencies": {
     "@nut-tree/nut-js": "^1.7.1-next.20210927204322",
+    "@nut-tree/plugin-ocr": "^0.2.1",
     "@types/jest": "^27.0.2",
     "jest": "^27.2.3",
     "ts-jest": "^27.0.5",
