@@ -2,12 +2,12 @@ const {keyboard, Key} = require("@nut-tree/nut-js");
 
 describe("nut.js keyboard usage", () => {
     describe("pressKey and releaseKey", () => {
-        it("should press and release Cmd+Space", async () => {
+        it("should press and release Cmd+V", async () => {
             // GIVEN
 
             // WHEN
-            await keyboard.pressKey(Key.LeftSuper, Key.Space);
-            await keyboard.releaseKey(Key.LeftSuper, Key.Space);
+            await keyboard.pressKey(Key.LeftSuper, Key.V);
+            await keyboard.releaseKey(Key.LeftSuper, Key.V);
 
             // THEN
         });
